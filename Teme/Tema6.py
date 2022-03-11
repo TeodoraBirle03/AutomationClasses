@@ -382,16 +382,13 @@ class TodoList:
     todo = {}
 
     # metode
-    def adauga_task(self):
-        self.todo['Scrie'] = 'stie sa scrie cifre si litere'
-        self.todo['Citeste'] = 'citeste cuvinte scurte'
-        self.todo['Numara'] = 'numara pana la 100'
-        self.todo['Calculeaza'] = 'face calcule simple'
+    def adauga_task(self, nume, descriere):
+        self.todo[nume] = descriere
         print(f'Lista de task-uri a devenit: {self.todo}')
 
-    def finalizeaza_task(self):
-        task3 = self.todo.pop('Numara')
-        print(f'Task-ul {task3} a fost finalizat')
+    def finalizeaza_task(self, nume):
+        self.todo[nume] = self.todo.pop(nume)
+        print(f'Task-ul {self.todo[nume]} a fost finalizat')
         print(f'Lista de task-uri a devenit: {self.todo}')
 
     def afiseaza_todo_list(self):
@@ -413,12 +410,14 @@ class TodoList:
 list1 = TodoList()
 list2 = TodoList()
 
-list1.adauga_task()
-list1.finalizeaza_task()
+list1.adauga_task('Scrie', 'stie sa scrie cifre si litere')
+list1.adauga_task('Citeste', 'citeste cuvinte scurte')
+list1.adauga_task('Numara', 'numara pana la 100')
+list1.finalizeaza_task('Scrie')
 list1.afiseaza_todo_list()
 list1.afiseaza_detalii_suplimentare('Citeste')
 list1.afiseaza_detalii_suplimentare('Coloreaza')
-list2.adauga_task()
-list2.finalizeaza_task()
+list2.adauga_task('Calculeaza', 'face calcule simple')
+list2.finalizeaza_task('Calculeaza')
 list2.afiseaza_todo_list()
 list2.afiseaza_detalii_suplimentare('Scrie')

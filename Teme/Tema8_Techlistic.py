@@ -16,21 +16,19 @@ chrome.maximize_window()
 chrome.get('https://www.techlistic.com/p/selenium-practice-form.html')
 
 # dam click pe butonul de pe pop-up-up de cookies (Continue...)
-chrome.find_element(By.XPATH, '//*[@id="ez-accept-all"]').click()
+chrome.find_element(By.XPATH, '//button[@id="ez-accept-all"]').click()
 sleep(2)
 
-# completam inputul pt first_name
-first_name = chrome.find_element(By.XPATH, '//*[@id="post-body-3077692503353518311"]/div[1]/div/div/h2[2]/div[1]/div/div[2]/input')
+# completam inputul pt first_name si last_name
+first_name = chrome.find_element(By.XPATH, '//input[@name="firstname"]')
 first_name.send_keys('Popescu')
-
-# chrome.find_element(By.XPATH, '//*[@id="cookieChoiceDismiss"]').click()
-# sleep(2)
-
-last_name = chrome.find_element(By.XPATH, '//*[@id="post-body-3077692503353518311"]/div[1]/div/div/h2[2]/div[1]/div/div[5]/input')
+last_name = chrome.find_element(By.XPATH, '//input[@name="lastname"]')
 last_name.send_keys('Alexandra')
 
-chrome.find_element(By.ID, 'sex-1').click()
-chrome.find_element(By.ID, 'exp-1').click()
+# alegem Female si 3 ani Experienta
+chrome.find_element(By.XPATH, '//input[@id="sex-1"]').click()
+sleep(2)
+chrome.find_element(By.XPATH, '//input[@id="exp-2"]').click()
 
-sleep(3)
+sleep(2)
 chrome.quit()

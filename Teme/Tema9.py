@@ -175,3 +175,30 @@ class Login(unittest.TestCase):
         actual = self.chrome.current_url
         expected = 'https://the-internet.herokuapp.com/login'
         self.assertEqual(actual, expected, "You are NOT in the right place")
+
+        '''BONUS Test12 - brute force password hacking
+    Completeaza user tomsmith
+    Gaseste elementul //h4 
+    Ia textu de pe el si fa split dupa spatiu. Considera fiecare cuvant ca o potentiala parola
+    Foloseste o structura iterativa prin care sa introduci rand pe rand parolele si sa apesi pe login
+    La final testul trebuie sa imi printeze fie
+	‘Nu am reusit sa gasesc parola’
+	‘Parola secreta este [parola]’ '''
+
+    # def test12_secret_password(self):
+    #     # Completeaza cu user valid
+    #     self.chrome.find_element(*self.USERNAME_INPUT).send_keys('tomsmith')
+    #     text_paragraph = self.chrome.find_element(By.XPATH, '//h4[@class="subheader"]').text
+    #     print(text_paragraph)
+    #     word_list = text_paragraph.split(' ')
+    #     print(word_list)
+    #     i = 0
+    #     while i <= len(word_list):
+    #         password = word_list[i]
+    #         i = i+1
+    #         self.chrome.find_element(*self.PASS_INPUT).send_keys(password)
+    #         if password == "SuperSecretPassword!":
+    #             print (f'Parola secreta este {password}')
+    #             continue
+    #         else:
+    #             print(f'Nu am reusit sa gasesc parola')

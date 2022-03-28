@@ -29,6 +29,9 @@ last_name.send_keys('Alexandra')
 chrome.find_element(By.XPATH, '//input[@id="sex-1"]').click()
 sleep(2)
 chrome.find_element(By.XPATH, '//input[@id="exp-2"]').click()
+sleep(2)
+# completam data
+chrome.find_element(By.XPATH, '//input[@id="datepicker"]').send_keys('03/03/2022')
 
 sleep(2)
 chrome.quit()

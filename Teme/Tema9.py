@@ -185,20 +185,21 @@ class Login(unittest.TestCase):
 	‘Nu am reusit sa gasesc parola’
 	‘Parola secreta este [parola]’ '''
 
-    # def test12_secret_password(self):
-    #     # Completeaza cu user valid
-    #     self.chrome.find_element(*self.USERNAME_INPUT).send_keys('tomsmith')
-    #     text_paragraph = self.chrome.find_element(By.XPATH, '//h4[@class="subheader"]').text
-    #     print(text_paragraph)
-    #     word_list = text_paragraph.split(' ')
-    #     print(word_list)
-    #     i = 0
-    #     while i <= len(word_list):
-    #         password = word_list[i]
-    #         i = i+1
-    #         self.chrome.find_element(*self.PASS_INPUT).send_keys(password)
-    #         if password == "SuperSecretPassword!":
-    #             print (f'Parola secreta este {password}')
-    #             continue
-    #         else:
-    #             print(f'Nu am reusit sa gasesc parola')
+    @unittest.skip
+    def test12_secret_password(self):
+        # Completeaza cu user valid
+        self.chrome.find_element(*self.USERNAME_INPUT).send_keys('tomsmith')
+        text_paragraph = self.chrome.find_element(By.XPATH, '//h4[@class="subheader"]').text
+        print(text_paragraph)
+        word_list = text_paragraph.split(' ')
+        print(word_list)
+        for i in range(len(word_list)):
+            password = word_list[i]
+            self.chrome.find_element(*self.PASS_INPUT).send_keys(password)
+            actual = self.chrome.current_url
+            expected = 'https://the-internet.herokuapp.com/secure'
+            if actual == expected:
+                print(f'Parola secreta este {password}')
+                break
+            else:
+                print(f'Nu am reusit sa gasesc parola')

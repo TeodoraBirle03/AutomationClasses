@@ -41,6 +41,7 @@ class Test(unittest.TestCase):
         self.assertEqual(expected, actual, 'Page title is incorrect')
 
     # verificam text de pe element (buton, mesaj de eroare etc)
+    @unittest.skip
     def test_submit_btn_text(self):
         # * tuple unpacking - se ia valoarea din tuple si se da ca argument in functie
         actual = self.chrome.find_element(*self.SUBMIT_BTN).text
@@ -48,11 +49,13 @@ class Test(unittest.TestCase):
         self.assertEqual(expected, actual, 'Submit btn text is incorrect')
 
     # verificam ca element e vizibil
+    @unittest.skip
     def test_elem_visible(self):
         elem = self.chrome.find_element(*self.SUBMIT_BTN)
         self.assertTrue(elem.is_displayed(), 'Submit btn nu e vizibil')
 
     # verificam ca element are un atribut asteptat (ex clasa)
+    @unittest.skip
     def test_elem_atribute(self):
         actual = self.chrome.find_element(*self.SUBMIT_BTN).get_attribute('class')
         expected = 'btn btn-lg btn-primary'
@@ -80,6 +83,7 @@ class Test(unittest.TestCase):
             pass
 
     # waits pe url
+    @unittest.skip
     def test_url_waits(self):
         self.chrome.find_element(*self.SUBMIT_BTN).click()
         # asteptam ca fostul url sa se schimbe

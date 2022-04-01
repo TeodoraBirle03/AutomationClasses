@@ -40,6 +40,7 @@ class Test2(unittest.TestCase):
         expected = 'My Store'
         self.assertEqual(expected, actual, 'Page title is incorrect')
 
+    @unittest.skip
     def test_elem_visible(self):
         elem = self.chrome.find_element(*self.ERROR_MESSAGE)
         self.assertTrue(elem.is_displayed(), 'Submit btn nu e vizibil')

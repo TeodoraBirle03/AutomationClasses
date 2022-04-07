@@ -17,30 +17,32 @@ chrome.maximize_window()
 chrome.get('http://automationpractice.com/index.php')
 
 # selector by ID
-search = chrome.find_element(By.ID, 'search_query_top')
-search.send_keys('Rochie lunga')
+# search = chrome.find_element(By.ID, 'search_query_top')
+# search.send_keys('Rochie lunga')
+#
+# # selector by class_name
+# chrome.find_element(By.CLASS_NAME, 'bx-prev').click()
+# sleep(1)
 
-# selector by class_name
-chrome.find_element(By.CLASS_NAME, 'bx-prev').click()
-sleep(2)
-
-# selector by ID
-email = chrome.find_element(By.ID, 'newsletter-input')
-email.send_keys('test@yahoo.com')
-sleep(2)
+# # selector by ID
+# email = chrome.find_element(By.ID, 'newsletter-input')
+# email.send_keys('test@yahoo.com')
+# sleep(2)
 
 # selector by xpath
-chrome.find_element(By.XPATH, '//*[@id="block_top_menu"]/ul/li[1]/a').click()
-sleep(2)
-chrome.find_element(By.XPATH, '//*[@id="contact-link"]/a').click()
-sleep(2)
-
-# selector by ClassName
-chrome.find_element(By.CLASS_NAME, 'login').click()
-
-# selector by link_test
-chrome.find_element(By.LINK_TEXT, 'support@seleniumframework.com').click()
-sleep(2)
+# chrome.find_element(By.XPATH, '//a[text() = "Women"]').click()
+# sleep(1)
+chrome.find_element(By.XPATH, '(//a[@title = "Printed Summer Dress"])[3]/parent::div/parent::div/parent::div//span[text() = "More"]').click()
+sleep(1)
+# chrome.find_element(By.XPATH, '//a[text() = "Contact us"]').click()
+# sleep(1)
+#
+# # selector by ClassName
+# chrome.find_element(By.CLASS_NAME, 'login').click()
+#
+# # selector by link_test
+# chrome.find_element(By.LINK_TEXT, 'support@seleniumframework.com').click()
+# sleep(1)
 
 chrome.quit()
 

@@ -25,5 +25,5 @@ chrome.find_element(By.PARTIAL_LINK_TEXT, 'Drag').click()
 
 
 
-sleep(3)
+sleep(2)
 chrome.quit()

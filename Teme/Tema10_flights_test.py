@@ -59,3 +59,6 @@ class Flights_search(unittest.TestCase):
         sleep(1)
         self.driver.find_element(*self.SEARCH_BTN).click()
         sleep(2)
+        actual = self.driver.current_url
+        expected = ('https://www.phptravels.net/flights/en/usd/clj/fco/oneway/economy_premium/20-04-2022/2/1/0')
+        self.assertEqual(expected, actual, 'You have landed on a wrong page/url')
